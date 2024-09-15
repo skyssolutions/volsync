@@ -208,9 +208,9 @@ LABEL org.opencontainers.image.description="VolSync data replication operator"
 LABEL org.opencontainers.image.documentation="https://volsync.readthedocs.io/"
 LABEL org.opencontainers.image.licenses="AGPL-3.0-or-later"
 LABEL org.opencontainers.image.revision="${version}"
-LABEL org.opencontainers.image.source="https://github.com/backube/volsync"
+LABEL org.opencontainers.image.source="https://github.com/skyssolutions/volsync"
 LABEL org.opencontainers.image.title="VolSync"
-LABEL org.opencontainers.image.vendor="Backube"
+LABEL org.opencontainers.image.vendor="Skyler Mäntysaari"
 LABEL org.opencontainers.image.version="${version}"
 
 ENTRYPOINT [ "/bin/bash" ]
