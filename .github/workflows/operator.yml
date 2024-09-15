@@ -16,8 +16,8 @@ env:
   GO_VERSION: "1.22"
   KIND_VERSION: "0.23.0"
   GO111MODULE: "on"
-  OPERATOR_IMAGE: "quay.io/backube/volsync"
-  CUSTOM_SCORECARD_IMAGE: "quay.io/backube/volsync-custom-scorecard-tests"
+  OPERATOR_IMAGE: "ghcr.io/skyssolutions/volsync"
+  CUSTOM_SCORECARD_IMAGE: "ghcr.io/skyssolutions/volsync-custom-scorecard-tests"
   DOCKER_BUILDKIT: "1"
 
 jobs:
@@ -433,7 +433,7 @@ jobs:
     uses: ./.github/workflows/registry-push.yml
     with:
       artifact-name: volsync-operator
-      image-name: quay.io/backube/volsync
+      image-name: ${{env.OPERATOR_IMAGE}}
     secrets:
       registry-username: ${{ secrets.REGISTRY_USERNAME }}
       registry-password: ${{ secrets.REGISTRY_PASSWORD }}
@@ -444,7 +444,7 @@ jobs:
     uses: ./.github/workflows/registry-push.yml
     with:
       artifact-name: volsync-custom-scorecard-tests-container
-      image-name: quay.io/backube/volsync-custom-scorecard-tests
+      image-name: ${{env.CUSTOM_SCORECARD_IMAGE}}
     secrets:
       registry-username: ${{ secrets.REGISTRY_USERNAME }}
       registry-password: ${{ secrets.REGISTRY_PASSWORD }}
