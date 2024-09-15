@@ -46,6 +46,14 @@ jobs:
           docker load -i /tmp/${{ inputs.image-filename }}
           docker inspect ${{ inputs.image-name }}
 
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: "${{ github.actor }}"
+          password: "${{ secrets.GITHUB_TOKEN }}"
+
+
       - name: Login to registry
         # If the registry server is specified in the image name, we use that.
         # If the server isn't in the image name, default to docker.io

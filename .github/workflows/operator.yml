@@ -433,7 +433,7 @@ jobs:
     uses: ./.github/workflows/registry-push.yml
     with:
       artifact-name: volsync-operator
-      image-name: ${{env.OPERATOR_IMAGE}}
+      image-name: ghcr.io/skyssolutions/volsync
     secrets:
       registry-username: ${{ secrets.REGISTRY_USERNAME }}
       registry-password: ${{ secrets.REGISTRY_PASSWORD }}
@@ -444,7 +444,7 @@ jobs:
     uses: ./.github/workflows/registry-push.yml
     with:
       artifact-name: volsync-custom-scorecard-tests-container
-      image-name: ${{env.CUSTOM_SCORECARD_IMAGE}}
+      image-name: ghcr.io/skyssolutions/volsync-custom-scorecard-tests
     secrets:
       registry-username: ${{ secrets.REGISTRY_USERNAME }}
       registry-password: ${{ secrets.REGISTRY_PASSWORD }}
